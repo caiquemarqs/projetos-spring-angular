@@ -1,0 +1,17 @@
+<div style="margin:20px">
+  <h1>Cadastro de Alunos</h1>
+
+  <form (ngSubmit)="salvar()">
+    <input [(ngModel)]="aluno.nome" name="nome" placeholder="Nome" required />
+    <input [(ngModel)]="aluno.email" name="email" placeholder="Email" required />
+    <input [(ngModel)]="aluno.curso" name="curso" placeholder="Curso" required />
+    <button type="submit">Salvar</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let a of alunos">
+      {{a.nome}} - {{a.email}} - {{a.curso}}
+      <button (click)="deletar(a.id)">Excluir</button>
+    </li>
+  </ul>
+</div>
